@@ -13,6 +13,7 @@
             (setf (gethash element hash) 1))
         (hash-keys hash)))
 
+;;; from pg's On Lisp
 (defun flatmap (cln)
     (labels ((mklist (x) (if (listp x) x (list x))))
         (mapcan #'(lambda (x) (if (atom x) (mklist x) (flatmap x))) cln)))
